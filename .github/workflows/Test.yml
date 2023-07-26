@@ -1,12 +1,8 @@
-name: Workflow Run
-on:
-  workflow_run:
-    workflows: [Repository Events]
-    types: [completed]
-    branches:
-      - main
+name: hello-world
+on: push
 jobs:
-  echo-string:
+  my-job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "I was triggered 'Repository Events' was completed"
+      - name: my-step
+        run: echo "Hello World!"
